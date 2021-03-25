@@ -183,19 +183,19 @@ Adafruit_StepperMotor *Adafruit_MotorShield::getStepper(uint16_t steps,
     steppers[num].MC = this;
     uint8_t pwma, pwmb, ain1, ain2, bin1, bin2;
     if (num == 0) {
-      pwma = 8;
-      ain2 = 9;
-      ain1 = 10;
-      pwmb = 13;
-      bin2 = 12;
-      bin1 = 11;
+      pwma = STEPPER0_PWMA;
+      ain2 = STEPPER0_AIN2;
+      ain1 = STEPPER0_AIN1;
+      pwmb = STEPPER0_PWMB;
+      bin2 = STEPPER0_BIN2;
+      bin1 = STEPPER0_BIN1;
     } else if (num == 1) {
-      pwma = 2;
-      ain2 = 3;
-      ain1 = 4;
-      pwmb = 7;
-      bin2 = 6;
-      bin1 = 5;
+      pwma = STEPPER1_PWMA;
+      ain2 = STEPPER1_AIN2;
+      ain1 = STEPPER1_AIN1;
+      pwmb = STEPPER1_PWMB;
+      bin2 = STEPPER1_BIN2;
+      bin1 = STEPPER1_BIN1;
     }
     steppers[num].PWMApin = pwma;
     steppers[num].PWMBpin = pwmb;

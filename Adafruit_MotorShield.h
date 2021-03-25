@@ -44,6 +44,41 @@
 #define INTERLEAVE 3
 #define MICROSTEP 4
 
+#define CUSTOM_STEPPER_PINOUTS
+
+#ifdef CUSTOM_STEPPER_PINOUTS
+// Set up your own custom connections to the TB6612 driver ICs
+#define STEPPER0_PWMA   3
+#define STEPPER0_AIN2   25
+#define STEPPER0_AIN1   24
+#define STEPPER0_PWMB   4
+#define STEPPER0_BIN2   2
+#define STEPPER0_BIN1   1
+
+#define STEPPER1_PWMA   12
+#define STEPPER1_AIN2   14
+#define STEPPER1_AIN1   15
+#define STEPPER1_PWMB   13
+#define STEPPER1_BIN2   18
+#define STEPPER1_BIN1   17
+
+#else
+// Standard pinouts for the Adafruit shield
+#define STEPPER0_PWMA   8
+#define STEPPER0_AIN2   9
+#define STEPPER0_AIN1   10
+#define STEPPER0_PWMB   13
+#define STEPPER0_BIN2   12
+#define STEPPER0_BIN1   11
+#define STEPPER1_PWMA   2
+#define STEPPER1_AIN2   3
+#define STEPPER1_AIN1   4
+#define STEPPER1_PWMB   7
+#define STEPPER1_BIN2   6
+#define STEPPER1_BIN1   5
+
+#endif
+
 class Adafruit_MotorShield;
 
 /** Object that controls and keeps state for a single DC motor */
